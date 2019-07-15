@@ -19,8 +19,7 @@ public class Employee {
     private String lastName;
     private String email;
  
-    //Getters and setters
- 
+   
     @Override
     public String toString() {
         return "[id=" + id + ", firstName=" + firstName + ","
