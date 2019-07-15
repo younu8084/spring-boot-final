@@ -23,7 +23,7 @@ public class AppController {
 		}
 	
 
-	    @RequestMapping(value="/Subha_Spring_Test_1/action", method = {RequestMethod.POST},produces = "html/text")
+	    @RequestMapping(value="/action", method = {RequestMethod.POST},produces = "html/text")
 	    public String showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String password){
 	    	System.out.println("showWelcomePage");
 	        boolean isValidUser = service.validateUser(name, password);
