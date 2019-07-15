@@ -21,10 +21,7 @@ public class AppController {
 			System.out.println("AppController--->Welcome");
 			return "index";
 		}
-	/*
-	 * @RequestMapping("/action") public String action() {
-	 * System.out.println("AppController--->action"); return "action"; }
-	 */
+	
 
 	    @RequestMapping(value="/action", method = {RequestMethod.POST},produces = "html/text")
 	    public String showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String password){
