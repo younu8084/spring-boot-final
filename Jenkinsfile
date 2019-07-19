@@ -52,20 +52,13 @@ sh label: '', script: 'curl -u $usr:$pwd_2 --upload-file target/myWebApp_Test-0.
         }
     }*/
      post {
-   /* success {
+   success {
       slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
     }
     failure {
       slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-    }*/
-    always {
-            echo 'I will always say Hello again!'
-            
-            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
-                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
-            
-        }
+    }
+    
   }
 }
 
