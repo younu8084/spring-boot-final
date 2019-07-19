@@ -32,7 +32,7 @@ public class LoginService {
     	    else
     	    {
     	    	x=false;
-    	    	break;
+    	  
     	    }
     	}
     	//System.out.println(employeeList.contains(o));
