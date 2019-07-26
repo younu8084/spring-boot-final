@@ -36,8 +36,8 @@ sh label: '', script: 'curl -u $usr:$pwd_2 --upload-file target/myWebApp_Test-0.
          stage ('Deploy'){
             steps{
                  withCredentials([usernamePassword(credentialsId: 'devops-tomcat', passwordVariable: 'pass', usernameVariable: 'userId')]) {
-                    sh label: '', script:'curl -u $userId:$pass http://ec2-18-224-182-74.us-east-2.compute.amazonaws.com:8080/manager/text/undeploy?path=/Subha_Spring_Test_1'
-                    sh label: '', script: 'curl -u  $userId:$pass --upload-file target/myWebApp_Test-0.0.1-SNAPSHOT.war http://ec2-18-224-182-74.us-east-2.compute.amazonaws.com:8080/manager/text/deploy?config=file:/var/lib/tomcat8/myWebApp_Test-0.0.1-SNAPSHOT.war\\&path=/Subha_Spring_Test_1'
+                    //sh label: '', script:'curl -u $userId:$pass ec2-18-188-202-13.us-east-2.compute.amazonaws.com/manager/text/undeploy?path=/Subha_Spring_Test_1'
+                    sh label: '', script: 'curl -u  $userId:$pass --upload-file target/myWebApp_Test-0.0.1-SNAPSHOT.war ec2-18-188-202-13.us-east-2.compute.amazonaws.com/manager/text/deploy?config=file:/var/lib/tomcat8/myWebApp_Test-0.0.1-SNAPSHOT.war\\&path=/Subha_Spring_Test_1'
             }
         }
 
