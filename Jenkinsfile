@@ -18,13 +18,13 @@ pipeline{
                 }
             }
         }
-        stage("Quality Gate") {
+        /*stage("Quality Gate") {
             steps {
               timeout(time: 1, unit: 'HOURS') {
                 waitForQualityGate abortPipeline: true
               }
             }
-       }
+       }*/
         stage ('Nexus'){
             steps{
  withCredentials([usernamePassword(credentialsId: 'sudipa_nexus', passwordVariable: 'pwd_2', usernameVariable: 'usr')]) {
