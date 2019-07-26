@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
  
 
-@CrossOrigin(origins="http://18.224.182.74:7000")
+@CrossOrigin(origins="http://18.188.202.13:7000")
 @RestController
 @RequestMapping(path="/employees")
 public class EmployeeController
