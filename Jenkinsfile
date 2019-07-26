@@ -21,7 +21,7 @@ pipeline{
        }
             steps {
                 
-                sh "mvn sonar:sonar -Dsonar.host.url=http://3.14.251.87:9000"
+                sh "mvn sonar:sonar -Dsonar.host.url=http://3.17.164.37:9000"
             }
         }
         stage ('Nexus'){
