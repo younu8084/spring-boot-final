@@ -1,34 +1,73 @@
-@Library('jenkins-shared-library')_
 pipeline {
+
+/*libraries{
+lib 'shlib'
+lib 'shlib@sonar.groovy'
+}*/
+
     agent any
-    tools {
-        maven "Maven"   
-    }   
-  
+    tools{
+        maven "Maven"
+    }
     stages {
-        stage('Compile-Build-Test ') {
-            steps {
-	    	slackNotify 'Building Started'
-                build 'BUILD'
+      /*stage('Start')
+            {
+                steps
+                 { 
+                    sendNotifications 'STARTED'
+                 }
+            }*/
+
+      stage('clean and build')
+            {
+                steps{
+                    
+                 
+                  //sendNotifications 'STARTEDBUILD'
+                    sh 'mvn clean package'
+                 
             }
-        }
-        stage('SonarQube Analysis'){
-            steps{
-               sonar 'SONAR'
             }
-        }
-	     stage('Nexus') {
-    		 steps{
-          		nexus 'NEXUS' 
-       			}
-		   }
-		stage("Tomcat Deployment"){
-			steps{
-			 withCredentials([string(credentialsId: 'ansible_credentials', variable: 'password')]){
-                    sh 'sshpass -p ${password} ssh -o StrictHostKeyChecking=no ansadmin@172.31.10.200 -C \"ansible-playbook /opt/playbooks/download.yml\"'
+            stage('Approval'){
+                steps{
+                    /*timeout(time:3, unit: 'DAYS'){
+                       input 'Proceed with next job?'*/
+                      script{
+                         emailext mimeType: 'text/html',
+                 subject: "[Jenkins]${currentBuild.fullDisplayName}",
+                 to: "abhishek.gupta2015a@gmail.com",
+                 body: '''<a href="http://18.224.251.223:8080/">click to approve</a>'''
+
+        def userInput = input id: 'userInput',
+                              message: 'Let\'s promote?', 
+                              submitterParameter: 'submitter',
+                              submitter: 'Abhishek',
+                              parameters: [
+                                [$class: 'TextParameterDefinition', defaultValue: 'sit', description: 'Environment', name: 'env'],
+                                [$class: 'TextParameterDefinition', defaultValue: 'k8s', description: 'Target', name: 'target']]
+
+        echo ("Env: "+userInput['env'])
+        echo ("Target: "+userInput['target'])
+        echo ("submitted by: "+userInput['submitter'])
+                      }
+                    
+                    
                 }
-			}
-		}
-		
-      }
-	}
+            }
+       stage('SonarQube analysis') {
+            steps {
+              withSonarQubeEnv('sonarqube') {
+                sh 'mvn sonar:sonar'
+              }
+            } 
+            }
+       
+  
+        }
+        /*post{
+always{
+sendNotifications currentBuild.result
+}
+}*/
+
+    }
