@@ -133,7 +133,7 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/Subha_Spring_Test_1/action" method="post">
+  <form class="modal-content animate" action="/action" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRYhdoomOA0GV3QxvifYlcNEULZn--0OIFXwpoo6hGq21o2JgD6Q" alt="Avatar" class="avatar">
