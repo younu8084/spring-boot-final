@@ -5,7 +5,7 @@ lib 'shlib'
 
  agent any
    tools{
-        maven "maven"
+        maven "Maven"
     }
     stages {
       stage('Start')
