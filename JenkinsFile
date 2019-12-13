@@ -1,6 +1,6 @@
 pipeline {
 libraries{
-lib 'shlib1'
+lib 'shlib'
 }
 
  agent any
