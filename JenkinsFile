@@ -22,14 +22,14 @@ pipeline {
             {
                 steps
                  { 
-                    sendNotifications 'STARTED'
+                   // sendNotifications 'STARTED'
                  }
             }
 
       stage('clean and build')
             {
                 steps{
-                sendNotifications 'STARTEDBUILD'
+               // sendNotifications 'STARTEDBUILD'
                 build 'BUILD'
                  
             }
