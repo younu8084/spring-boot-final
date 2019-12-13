@@ -1,13 +1,17 @@
 @Library('shlib')_
 pipeline {
-def pipeline = new killOldBuilds()
-stage 'purge'
-pipeline.killOldBuilds()
+
  agent any
    tools{
         maven "Maven"
     }
     stages {
+    stage('abort')
+    {
+    steps{
+    call()
+    }
+    }
       stage('Start')
             {
                 steps
