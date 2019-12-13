@@ -4,9 +4,6 @@ pipeline {
    tools{
         maven "Maven"
     }
-    def pipeline = new killOldBuilds()
-stage 'purge'
-pipeline.killOldBuilds()
     stages {
       stage('Start')
             {
