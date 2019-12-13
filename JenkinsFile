@@ -1,5 +1,8 @@
-@Library('shlib')
+@Library('shlib')_
 pipeline {
+def pipeline = new killOldBuilds()
+stage 'purge'
+pipeline.killOldBuilds()
  agent any
    tools{
         maven "Maven"
