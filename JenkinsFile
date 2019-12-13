@@ -12,6 +12,12 @@ pipeline {
    abort()
     }
     }
+    stage('delete')
+    {
+    steps{
+   delete()
+    }
+    }
       stage('Start')
             {
                 steps
