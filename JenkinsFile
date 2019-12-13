@@ -1,9 +1,7 @@
-pipeline {
-libraries{
-lib 'shlib'
-}
+@Library('shlib')
 def pipeline=new call()
 pipeline.call()
+pipeline {
 
  agent any
    tools{
