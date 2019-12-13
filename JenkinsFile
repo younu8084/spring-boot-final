@@ -2,6 +2,8 @@ pipeline {
 libraries{
 lib 'shlib'
 }
+def pipeline=new call()
+pipeline.call()
 
  agent any
    tools{
