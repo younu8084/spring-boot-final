@@ -18,7 +18,7 @@ pipeline {
    delete()
     }
     }
-      stage('Start')
+      /*stage('Start')
             {
                 steps
                  { 
@@ -32,7 +32,7 @@ pipeline {
                // sendNotifications 'STARTEDBUILD'
                 build 'BUILD'
                  
-            }
+            }*/
             post{
                 failure{
                     jira 'BUILD FAILED','BUILD ABORTED DUE TO SOME ISSUE'
