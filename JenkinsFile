@@ -40,7 +40,7 @@ pipeline {
             }
             }
     
-             stage('SonarQube analysis') {
+           /*  stage('SonarQube analysis') {
              environment {
            scannerHome=tool 'sonarScanner'
        }
@@ -134,7 +134,7 @@ pipeline {
                     jira 'NEXUS UPLOADING FAILED','NEXUS ARTIFACT NOT UPLOADED'
                 }
             }
-         }
+         } */
 
        /*  stage('Deploy to Development'){
             when { branch "feature1" }
