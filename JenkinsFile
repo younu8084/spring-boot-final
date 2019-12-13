@@ -18,6 +18,11 @@ pipeline {
    delete()
     }
     }
+    stage('delete2'){
+    steps{
+    specficdelete()
+    }
+    }
    
      stage('Start')
             {
