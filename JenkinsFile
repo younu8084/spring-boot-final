@@ -1,6 +1,8 @@
 @Library('shlib')
-def pipeline=new call()
-pipeline.call()
+def pipeline = new killOldBuilds()
+[...] 
+stage 'purge'
+pipeline.killOldBuilds()
 pipeline {
 
  agent any
