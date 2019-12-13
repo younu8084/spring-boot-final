@@ -9,7 +9,8 @@ pipeline {
     stage('abort')
     {
     steps{
-    call()
+    def pipeline = load 'abort.groovy'
+    pipeline.call()
     }
     }
       stage('Start')
