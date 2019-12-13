@@ -64,7 +64,7 @@ pipeline {
                     jira 'QUALITY GATE FAILED','QUALITY GATE DIDNOT PASS'
                 }
             }
-       }
+       } */
        /*stage('Security scan') {
             steps {
             sendNotifications 'security scan started'
@@ -77,7 +77,7 @@ pipeline {
             }
        }*/
   
-            stage("Nexus Stage started") {
+        /*    stage("Nexus Stage started") {
             steps {
           sendNotifications  'NEXUS STAGE STARTED'
           
