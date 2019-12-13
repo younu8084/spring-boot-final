@@ -18,21 +18,21 @@ pipeline {
    delete()
     }
     }
-      /*stage('Start')
+      stage('Start')
             {
                 steps
                  { 
-                   // sendNotifications 'STARTED'
+                    sendNotifications 'STARTED'
                  }
             }
 
       stage('clean and build')
             {
-                steps{
-               // sendNotifications 'STARTEDBUILD'
+              steps{
+                sendNotifications 'STARTEDBUILD'
                 build 'BUILD'
                  
-            }*/
+            }
             post{
                 failure{
                     jira 'BUILD FAILED','BUILD ABORTED DUE TO SOME ISSUE'
