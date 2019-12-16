@@ -12,6 +12,12 @@ pipeline {
    abort()
     }
     }
+     stage('range')
+    {
+    steps{
+   range()
+    }
+    }
     stage('deletera')
     {
    steps{
