@@ -21,6 +21,14 @@ options {
    delete()
     }
     }
+    stage('deletera')
+    {
+   steps{
+    
+    deletera 'test',106,110
+  
+  }
+    }
       stage('Start')
             {
                 steps
