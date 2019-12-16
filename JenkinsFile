@@ -1,5 +1,5 @@
 @Library('shlib')_
-def jobName = "$Jobname"
+def jobName = ${env.JOB_NAME}
 def buildRange = "100-105"
 pipeline {
 
