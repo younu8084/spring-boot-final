@@ -14,19 +14,20 @@ pipeline {
    abort()
     }
     }
-    stage('listdelete')
-    {
-    steps{
-    deletelist()
-    }
-    }
-     stage('range')
+    stage('range')
     {
     
     steps{
    range()
     }
     }
+    stage('listdelete')
+    {
+    steps{
+    deletelist()
+    }
+    }
+     
     stage('deletera')
     {
    steps{
