@@ -1,6 +1,6 @@
 @Library('shlib')_
 
-def buildRange = "100-105"
+
 pipeline {
 
  agent any
