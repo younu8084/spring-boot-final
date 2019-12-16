@@ -17,10 +17,10 @@ pipeline {
    abort()
     }
     }
-    stage('delete')
+    stage('deletera')
     {
     steps{
-   delete()
+   deletera 'test',81,83
     }
     }
     
