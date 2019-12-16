@@ -6,7 +6,7 @@ pipeline {
         maven "Maven"
     }
     options {
-        //keep only 10 last builds
+        //keep only 5 last builds
         buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '1'))
         disableConcurrentBuilds()
     }
