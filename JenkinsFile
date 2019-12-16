@@ -7,7 +7,7 @@ pipeline {
     }
     options {
         //keep only 10 last builds
-        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '1'))
+        buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '1'))
         disableConcurrentBuilds()
     }
     stages {
