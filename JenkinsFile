@@ -14,8 +14,8 @@ pipeline {
     }
     stage('deletera')
     {
-    steps{
-     
+   steps{
+    def  externalMethod=load(" deletera.groovy")
     deletera 'test',81,83
   
     }
