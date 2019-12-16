@@ -21,12 +21,7 @@ pipeline {
    range()
     }
     }
-    stage('listdelete')
-    {
-    steps{
-    deletelist()
-    }
-    }
+    
      
     stage('deletera')
     {
