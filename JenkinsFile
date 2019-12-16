@@ -16,7 +16,7 @@ pipeline {
     {
     steps{
      
-    deletera 'test'
+    deletera.call('test',81,83) 
   
     }
     }
