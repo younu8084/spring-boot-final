@@ -32,7 +32,7 @@ pipeline {
     {
    steps{
     
-    call('test',81,83)
+    del('test',81,83)
   
   }
     }
