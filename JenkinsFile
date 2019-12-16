@@ -16,7 +16,7 @@ pipeline {
     {
    steps{
     
-    delete('test',81,83)
+    delete(test,81,83)
   
   }
     }
