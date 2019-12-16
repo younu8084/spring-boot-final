@@ -5,6 +5,11 @@ pipeline {
    tools{
         maven "Maven"
     }
+    options {
+        //keep only 10 last builds
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '1'))
+        disableConcurrentBuilds()
+    }
     stages {
     stage('abort')
     {
