@@ -18,10 +18,14 @@ pipeline {
     {
     
     steps{
+    
+     script {
+                def range = "107-110"
+		
    range()
     }
     }
-    
+    }
      
     stage('deletera')
     {
