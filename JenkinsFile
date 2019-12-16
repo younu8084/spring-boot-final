@@ -5,11 +5,6 @@ pipeline {
    tools{
         maven "Maven"
     }
-    options {
-        //keep only 5 last builds
-        buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '1'))
-        disableConcurrentBuilds()
-    }
     stages {
     stage('abort')
     {
@@ -20,7 +15,9 @@ pipeline {
     stage('deletera')
     {
     steps{
-   deletera 'test',81,83
+     def script = load '../deletera.groovy'
+    script.method('test', 81,83)
+  
     }
     }
     
