@@ -14,17 +14,7 @@ pipeline {
    abort()
     }
     }
-    stage('range')
-    {
     
-    steps{
-    
-     script {
-               def buildRange = "107-110"
-   range()
-    }
-    }
-    }
      
     stage('deletera')
     {
