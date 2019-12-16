@@ -20,8 +20,7 @@ pipeline {
     steps{
     
      script {
-                def range = "107-110"
-		
+               def buildRange = "107-110"
    range()
     }
     }
